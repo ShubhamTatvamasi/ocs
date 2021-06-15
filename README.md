@@ -2,12 +2,7 @@
 
 ```bash
 docker pull sigscale/ocs
-docker run -ti --entrypoint bash -h host1 -v db:/home/otp/db sigscale/ocs
-```
-
-```bash
-otp@host1:~$ bin/initialize
-otp@host1:~$ exit
+docker run --rm -it --entrypoint bash -h host1 -v db:/home/otp/db sigscale/ocs bin/initialize
 ```
 
 ```bash
