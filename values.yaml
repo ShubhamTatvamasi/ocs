@@ -1,0 +1,11 @@
+# Default values for ocs.
+
+replicaCount: 1
+
+image:
+  repository: sigscale/ocs
+  pullPolicy: IfNotPresent
+  tag: latest
+
+service:
+  type: NodePort

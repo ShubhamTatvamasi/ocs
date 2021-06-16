@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "ocs.fullname" . }}
+  labels:
+    {{- include "ocs.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  serviceName: "ocs"
+  selector:
+    matchLabels:
+      {{- include "ocs.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "ocs.selectorLabels" . | nindent 8 }}
+    spec:
+      volumes:
+      - name: ocs-storage
+        persistentVolumeClaim:
+          claimName: ocs-claim
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+            - mountPath: "/home/otp/db/"
+              name: ocs-storage
+          # command: ["sleep", "infinity"]

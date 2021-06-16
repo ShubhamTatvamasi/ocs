@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "ocs.fullname" . }}
+  labels:
+    {{- include "ocs.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    {{- include "ocs.selectorLabels" . | nindent 4 }}
+  ports:
+    - name: name-1
+      protocol: TCP
+      port: 8080
+      nodePort: 30080
+    - name: name-2
+      protocol: TCP
+      port: 3868
+      nodePort: 30068
+    - name: name-3
+      protocol: UDP
+      port: 1812
+      nodePort: 30012
+    - name: name-4
+      protocol: UDP
+      port: 1813
+      nodePort: 30013
