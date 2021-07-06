@@ -1,5 +1,18 @@
 # ocs
 
+install OCS:
+```bash
+helm upgrade -i ocs .
+```
+
+k8s.shubhamtatvamasi.com:30080
+k8s.shubhamtatvamasi.com:30068
+k8s.shubhamtatvamasi.com:30012
+k8s.shubhamtatvamasi.com:30013
+
+---
+### Docker
+
 ```bash
 docker pull sigscale/ocs
 docker run --rm -it --entrypoint bash -h host1 -v db:/home/otp/db sigscale/ocs bin/initialize

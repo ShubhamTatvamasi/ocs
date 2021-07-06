@@ -5,7 +5,7 @@ replicaCount: 1
 image:
   repository: sigscale/ocs
   pullPolicy: IfNotPresent
-  tag: latest
+  tag: 3.1.52.1-4
 
 service:
   type: NodePort
