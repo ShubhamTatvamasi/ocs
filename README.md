@@ -1,5 +1,7 @@
 # ocs
 
+https://github.com/sigscale/ocs-k8s
+
 install OCS:
 ```bash
 helm upgrade -i ocs .
