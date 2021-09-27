@@ -32,6 +32,11 @@ Realm
 epc.mnc050.mcc659.3gppnetwork.org
 ```
 
+Local Address
+```
+
+```
+
 Product Name
 ```
 Magma
