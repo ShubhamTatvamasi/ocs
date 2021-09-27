@@ -9,7 +9,7 @@ ocs.mnc050.mcc659.3gppnetwork.org
 
 Address:
 ```
-k8s.shubhamtatvamasi.com:30068
+k8s.shubhamtatvamasi.com
 ```
 
 Destination Host
